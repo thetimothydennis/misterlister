@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from "react";
+import {useState, useEffect} from "react";
+import "./SearchBox.css";
 
 function SearchBox({searchString, setSearchString}) {
     
@@ -7,9 +8,9 @@ function SearchBox({searchString, setSearchString}) {
     }
 
     return (
-        <div id="searchBox">
+        <div id="search-box">
             <form  onSubmit={handleSubmit}>
-                <label htmlFor="search-box">Search Spotify for tracks</label>
+                <label htmlFor="search-box"><h2>Search Spotify</h2></label>
                 <input value={searchString} onChange={(e) => setSearchString(e.target.value)} type="text" id="search-box" name="search-box" />
                 <input type="submit" value="Search Spotify" />
             </form>

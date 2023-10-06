@@ -1,0 +1,18 @@
+.track-name {
+    font-size: 1.5rem;
+}
+
+.album-name {
+    font-style:italic;
+}
+
+.track {
+    border: 1px solid hsl(120, 50%, 80%);
+    border-radius: 1rem;
+    margin: 0.5rem auto;
+}
+
+.track:hover {
+    background-color: hsl(120, 50%, 80%);
+    color: hsl(120, 50%, 10%);
+}

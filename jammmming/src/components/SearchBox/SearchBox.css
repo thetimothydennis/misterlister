@@ -1,0 +1,10 @@
+#search-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+input {
+    margin: 0.5rem auto;
+}

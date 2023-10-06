@@ -1,0 +1,4 @@
+div#playlist {
+    display: flex;
+    flex-direction: column;
+}
