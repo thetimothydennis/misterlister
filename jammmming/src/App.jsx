@@ -33,12 +33,14 @@ function App() {
   return (
     <div>
       <h1>Jammming</h1>
-      <div id="left-container">
-        <SearchBox />
-        <SearchResults trackArr={trackArr} trackList={trackList} setTrackList={setTrackList} />
-      </div>
-      <div id="right-container">
-        <Playlist trackList={trackList} setTrackList={setTrackList} playlistName={playlistName} setPlaylistName={setPlaylistName} />
+      <div id="main-container">
+        <div id="left-container">
+          <SearchBox />
+          <SearchResults trackArr={trackArr} trackList={trackList} setTrackList={setTrackList} />
+        </div>
+        <div id="right-container">
+          <Playlist trackList={trackList} setTrackList={setTrackList} playlistName={playlistName} setPlaylistName={setPlaylistName} />
+        </div>
       </div>
     </div>
   )

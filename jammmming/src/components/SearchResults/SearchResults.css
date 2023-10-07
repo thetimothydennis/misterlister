@@ -13,3 +13,8 @@ div.search-result {
 .search-result button {
     height: 3rem;
 }
+
+.track {
+    background-color: hsl(120, 50%, 80%);
+    color: hsl(120, 50%, 10%);
+}

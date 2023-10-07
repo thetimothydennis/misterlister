@@ -14,6 +14,7 @@ function SearchResults({trackArr, trackList, setTrackList}) {
         setTrackList(() => newTrackList)
     }
 
+
     
     return (
         <div id="search-results">

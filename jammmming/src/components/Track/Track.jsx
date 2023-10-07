@@ -3,10 +3,10 @@ import "./Track.css";
 
 function Track(props) {
 
-    const {id, handleClick, name, artist, album} = props;    
+    const {id, handleClick, name, artist, album, style} = props;    
     
     return (
-        <div id={id} className="track" onClick={handleClick} value={id}>
+        <div style={style} id={id} className="track" onClick={handleClick} value={id}>
             <div id={id} className="track-name">
                 {name}
             </div>

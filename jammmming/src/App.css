@@ -5,9 +5,11 @@
   text-align: center;
 }
 
-h1 {
-  position: relative;
-  top: -10rem;
+
+div#main-container {
+  display: flex;
+  flex-direction: row;
+  width: 90vw;
 }
 
 div#left-container {
@@ -15,29 +17,34 @@ div#left-container {
   flex-direction: column;
   justify-items: center;
   align-items: center;
+  margin: 1rem 2rem;
+  width: 40vw
+}
+
+div#right-container {
+  margin: 1rem 2rem;
+  width: 40vw
 }
 
 div#search-box {
-  position: absolute;
-  left: 12rem;
-  top: 5rem;
   padding: 1rem;
   background-color: hsl(120, 50%, 30%);
+  width: 100%;
+  border-radius: 1rem;
 }
 
 div#search-results {
-  position: relative;
-  top: 2rem;
-  left: -17.5rem;
   padding: 1rem;
   background-color: hsl(140, 50%, 30%);
+  width: 100%;
+  border-radius: 1rem;
+  margin: 2rem 
 }
 
 div#playlist {
-  position: absolute;
-  right: 12rem;
-  top: 5rem;
   padding: 1rem;
   background-color: hsl(160, 50%, 50%);
+  width: 100%;
+  border-radius: 1rem;
 }
 
