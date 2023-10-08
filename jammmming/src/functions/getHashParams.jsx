@@ -1,4 +1,3 @@
-
 function getHashParams(hash) {
     let hashParams = {};
     let hashArr = hash.split("&")

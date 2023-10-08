@@ -8,7 +8,7 @@ function LoginPage() {
 
     return (
         <div>
-            <button onClick={handleClick}>Login</button>
+            <button onClick={handleClick}>Login with Spotify</button>
         </div>
     )
 }

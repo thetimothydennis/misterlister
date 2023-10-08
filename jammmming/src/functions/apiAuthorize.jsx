@@ -1,14 +1,7 @@
-import generateCodeChallenge from "./genHash";
 import generateRandomString from "./genRandomStr";
-import getHashParams from "./getHashParams";
 
 const API_CLIENT_ID = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-// const API_SECRET = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
 const REDIRECT_URI = "http://localhost:5173/callback";
-
-// const params = getHashParams();
-
-// let access_token = params.access_token
 
 const state = generateRandomString(16);
 

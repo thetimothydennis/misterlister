@@ -31,8 +31,6 @@ function Playlist(props) {
 
     return (
         <div id="playlist">
-            {/* <label htmlFor="playlist-name">Set Playlist Name</label>
-            <input name="playlist-name" id="playlist-name" type="text" value={playlistName} onChange={handleChangeName} /> */}
             <h2 onClick={togglePlaylistHeader} id="playlist-header">{playlistName}</h2>
             <PlaylistNameBox playlistName={playlistName} togglePlaylistHeader={togglePlaylistHeader} handleChangeName={handleChangeName} />
             <button>Add to Spotify</button>
