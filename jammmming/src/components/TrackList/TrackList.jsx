@@ -18,7 +18,7 @@ function TrackList({trackList, setTrackList}) {
                     <div>
                         <Track id={song.id} name={song.name} artist={song.artist} album={song.album} />
                     </div>
-                    <button onClick={handleClick}>Remove</button>
+                    <button className="remove-btn" onClick={handleClick}>-</button>
                 </div>
                 )
             })}

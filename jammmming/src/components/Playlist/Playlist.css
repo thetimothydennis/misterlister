@@ -1,7 +1,7 @@
 div#playlist {
     display: flex;
     flex-direction: column;
-    min-height: 11.1rem
+    min-height: 10.1rem
 }
 
 div.playlist-name-ip-flex {
@@ -23,4 +23,10 @@ div.playlist-name-ip-flex {
     font-size: 1.3rem;
     width: 77%;
     margin: 0.25rem auto;
+}
+
+.save-playlist-btn {
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    width: 100%;
 }

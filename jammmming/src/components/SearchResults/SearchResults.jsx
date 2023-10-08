@@ -26,7 +26,7 @@ function SearchResults({searchResults, trackList, setTrackList}) {
                                 <div>
                                     <Track id={song.uri} name={song.name} artist={song.artists[0].name} album={song.album.name} />
                                 </div>
-                                <button onClick={handleClick}>Add</button>
+                                <button className="add-btn" onClick={handleClick}>+</button>
                             </div>
                         </div>
                     )
@@ -38,7 +38,9 @@ function SearchResults({searchResults, trackList, setTrackList}) {
     return (
         <div id="search-results">
             <h2>Results</h2>
-            {render}
+            <div id="populated-results">
+                {render}
+            </div>
         </div>
     )
 }

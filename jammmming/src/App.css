@@ -6,6 +6,29 @@
 }
 
 
+div#header{
+  background-color: hsl(170, 80%, 10%);
+  border: 0.25rem ridge hsl(150, 80%, 5%);
+  border-radius: 1rem;
+  height: 3.5rem;
+  margin: auto;
+  margin-bottom: 1rem;
+  font-size: x-large;
+  padding: 1rem;
+  width: 75%;
+}
+
+#header h1 {
+  margin: 0;
+}
+
+div#root-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
 div#main-container {
   display: flex;
   flex-direction: row;
@@ -43,8 +66,27 @@ div#search-results {
 
 div#playlist {
   padding: 1rem;
-  background-color: hsl(160, 50%, 50%);
+  background-color: hsl(160, 50%, 30%);
   width: 100%;
+  border-radius: 1rem;
+}
+
+.add-btn {
+  font-weight: 900;
+}
+
+.remove-btn {
+  font-weight: 900;
+}
+
+.search-result, .playlist-track {
+  background-color: hsl(150, 60%, 20%);
+  border-radius: 1rem;
+  border: 0.25rem ridge hsl(150, 80%, 5%)
+}
+
+#track-list, #populated-results {
+  background-color: hsl(150, 60%, 15%);
   border-radius: 1rem;
 }
 

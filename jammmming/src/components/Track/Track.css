@@ -1,12 +1,19 @@
 .track-name {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .album-name {
-    font-style:italic;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+.artist-name {
+    font-size: 0.8rem;
 }
 
 .track {
     border-radius: 1rem;
-    margin: 0.5rem auto;
+    margin: 0.5rem 0.5rem;
+    background-color: hsl(155, 50%, 10%);
+    border: 0.125rem ridge hsl(150, 70%, 10%);
 }

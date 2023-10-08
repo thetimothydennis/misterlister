@@ -40,7 +40,7 @@ function Playlist(props) {
         <div id="playlist">
             <h2 onClick={togglePlaylistHeader} id="playlist-header">{playlistName}</h2>
             <PlaylistNameBox {...{playlistName, togglePlaylistHeader, handleChangeName}} />
-            <button onClick={handleSavePlaylist}>Add to Spotify</button>
+            <button className="save-playlist-btn" onClick={handleSavePlaylist}>Add to Spotify</button>
             <TrackList {...{setTrackList, trackList}} />
         </div>
     )

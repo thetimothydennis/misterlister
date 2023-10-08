@@ -70,11 +70,18 @@ function App() {
     const addToPlaylistURI = `https://api.spotify.com/v1/users/${apiUserId}/playlists/${playlistId}/tracks`;
     const savePlaylistToSpotify = await axios.post(addToPlaylistURI, playlistBody, config);
     console.log(savePlaylistToSpotify);
+    if (savePlaylistToSpotify.status === 201) {
+      alert("Playlist saved!")
+    } else if (savePlaylistToSpotify.status >= 400) {
+      alert("Error saving playlist.")
+    }
   }
 
   return (
-    <div>
-      <h1>Mr. Lister</h1>
+    <div id="root-container">
+      <div id="header">
+        <h1>Mr. Lister</h1>
+      </div>
       <div id="main-container">
         <div id="left-container">
           <SearchBox {...{handleSearch, searchString, setSearchString}} />

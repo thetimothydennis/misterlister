@@ -3,18 +3,8 @@ div.search-result {
     flex-direction: row;
     justify-content: flex-end;
     align-items:center;
-    margin: 0.5rem auto
 }
 
 .search-result div {
     width: 100%;
-}
-
-.search-result button {
-    height: 3rem;
-}
-
-.track {
-    background-color: hsl(120, 50%, 80%);
-    color: hsl(120, 50%, 10%);
 }

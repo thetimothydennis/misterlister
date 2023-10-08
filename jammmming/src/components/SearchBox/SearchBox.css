@@ -14,16 +14,6 @@ input {
     margin-top: 0.0125rem;
 }
 
-input[type="text"] {
-    font-size: 1.2rem;
-    border: none;
-    background-color: hsl(130, 40%, 10%);
-    color: hsl(130, 80%, 90%);
-}
-
 input[type="submit"] {
-    background-color: hsl(130, 10%, 10%);
-    border: none;
-    border-radius: 0.5rem;
-    height: 2.25rem;
+    height: 2.4rem;
 }
