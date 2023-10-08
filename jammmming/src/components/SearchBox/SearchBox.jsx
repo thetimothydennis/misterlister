@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import PropTypes from "prop-types";``
 import "./SearchBox.css";
 
 function SearchBox({handleSearch, searchString, setSearchString}) {
@@ -12,6 +12,12 @@ function SearchBox({handleSearch, searchString, setSearchString}) {
             </form>
         </div>
     )
+}
+
+SearchBox.propTypes = {
+    handleSearch: PropTypes.func,
+    searchString: PropTypes.string,
+    setSearchString: PropTypes.func
 }
 
 export default SearchBox;

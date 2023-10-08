@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";``
 
 function PlaylistNameBox({togglePlaylistHeader, handleChangeName, playlistName}) {
 
@@ -10,6 +10,12 @@ function PlaylistNameBox({togglePlaylistHeader, handleChangeName, playlistName})
             </div>
         </div>
     )
+}
+
+PlaylistNameBox.propTypes = {
+    togglePlaylistHeader: PropTypes.func,
+    handleChangeName: PropTypes.func,
+    playlistName: PropTypes.string
 }
 
 export default PlaylistNameBox;

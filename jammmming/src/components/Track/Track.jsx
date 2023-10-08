@@ -1,12 +1,10 @@
-import React, {useEffect} from "react";
+import PropTypes from "prop-types";``
 import "./Track.css";
 
-function Track(props) {
+function Track({id, name, artist, album}) {
 
-    const {id, handleClick, name, artist, album, style} = props;    
-    
     return (
-        <div style={style} id={id} className="track" onClick={handleClick} value={id}>
+        <div id={id} className="track" value={id}>
             <div id={id} className="track-name">
                 {name}
             </div>
@@ -15,6 +13,13 @@ function Track(props) {
             </div>
         </div>
     )
+}
+
+Track.propTypes = {
+    id: PropTypes.string,
+    name: PropTypes.string,
+    artist: PropTypes.string,
+    album: PropTypes.string
 }
 
 export default Track;

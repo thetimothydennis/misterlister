@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from "react";
+import {useState, useEffect} from "react";
+import PropTypes from "prop-types";``
 import Track from "../Track/Track";
 import "./SearchResults.css";
 
@@ -40,6 +41,12 @@ function SearchResults({searchResults, trackList, setTrackList}) {
             {render}
         </div>
     )
+}
+
+SearchResults.propTypes = {
+    searchResults: PropTypes.array,
+    trackList: PropTypes.array,
+    setTrackList: PropTypes.func
 }
 
 export default SearchResults;

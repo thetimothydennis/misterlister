@@ -1,17 +1,14 @@
-import React, {useEffect} from "react";
+import PropTypes from "prop-types";``
 import Track from "../Track/Track.jsx";
 import "./TrackList.css";
 
-function TrackList(props) {
-
-    const {trackList, setTrackList} = props;
+function TrackList({trackList, setTrackList}) {
 
     const handleClick = (e) => {
         const removeId = e.target.parentElement.children[0].children[0].id;
         const newTrackList = trackList.filter(item => item.id !== removeId)
         setTrackList(newTrackList)
     }
-
 
     return (
         <div id="track-list">            
@@ -27,6 +24,11 @@ function TrackList(props) {
             })}
         </div>
     )
+}
+
+TrackList.propTypes = {
+    trackList: PropTypes.array,
+    setTrackList: PropTypes.func
 }
 
 export default TrackList;
