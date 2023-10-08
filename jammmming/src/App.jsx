@@ -1,22 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import SearchBox from './components/SearchBox/SearchBox';
 import SearchResults from './components/SearchResults/SearchResults';
 import Playlist from './components/Playlist/Playlist';
 import axios from "axios";
 import getHashParams from './functions/getHashParams';
 import "./App.css";
-import getUserId from './functions/apiCreatePlaylist';
 
 // Spotify song uri
 // https://open.spotify.com/track/5qm0KiVKMXW1kq6VrnIhz5?si=a8131151e89d400e
 
-const userIdURI = "https://api.spotify.com/v1/me";
-const createPlaylistURI = "https://api.spotify.com/v1/users/{user_id}/playlists";
-const addToPlaylistURI = "https://api.spotify.com/v1/users/{user_id}/playlists/{playlist_id}/";
-
-
 function App() {
-
   const [playlistName, setPlaylistName] = useState("New Playlist");
   const [trackList, setTrackList] = useState([]);
   const [accessToken, setAccessToken] = useState("");
@@ -26,9 +19,10 @@ function App() {
   const [searchType, setSearchType] = useState("track");
   const [reqHeaders, setReqHeaders] = useState({});
   const [config, setConfig] = useState({});
-  const [userId, setUserId] = useState("");
-
- 
+  const [nameBody, setNameBody] = useState([]);
+  const [trackUris, setTrackUris] = useState([]);
+  
+  const userIdURI = "https://api.spotify.com/v1/me";
 
   useEffect(() => {
     const params = getHashParams(window.location.hash);
@@ -48,12 +42,21 @@ function App() {
   })
   }, [reqHeaders])
 
+  useEffect(() => {
+    setNameBody({
+      name: playlistName
+    })
+  }, [playlistName])
 
-  const getUserId = async () => {
-    const apiUserId = await axios.get(userIdURI, config);
-    return apiUserId.data.id;
-  }
+  useEffect(() => {
+    const trackUriArr = [];
+    for (let track of trackList) {
+      trackUriArr.push(track.id);
+    }
+    setTrackUris(trackUriArr);
+  }, [trackList])
 
+  
   const handleSearch = async (e) => {
     e.preventDefault();
     const baseAPIurl = "https://api.spotify.com/v1/search?q=";
@@ -63,9 +66,17 @@ function App() {
 
   const handleSavePlaylist = async (e) => {
     e.preventDefault();
-    const apiUserId = await getUserId();
-    setUserId(apiUserId);
-
+    const getApiUserId = await axios.get(userIdURI, config);
+    const apiUserId = getApiUserId.data.id;
+    const baseAPIurl = `https://api.spotify.com/v1/users/${apiUserId}/playlists`;
+    const savePlaylistName = await axios.post(baseAPIurl, nameBody, config);
+    const playlistId = savePlaylistName.data.id;
+    const playlistBody = {
+      'uris': trackUris
+    };
+    const addToPlaylistURI = `https://api.spotify.com/v1/users/${apiUserId}/playlists/${playlistId}/tracks`;
+    const savePlaylistToSpotify = await axios.post(addToPlaylistURI, playlistBody, config);
+    console.log(savePlaylistToSpotify);
   }
 
   return (

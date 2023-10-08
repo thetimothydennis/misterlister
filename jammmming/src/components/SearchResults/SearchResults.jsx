@@ -7,7 +7,6 @@ function SearchResults({searchResults, trackList, setTrackList}) {
     const [render, setRender] = useState(<div></div>);
 
     useEffect(() => {
-        console.log(searchResults)
         if (searchResults.length > 0) {
             const handleClick = (e) => {
                 const trackContainer = e.target.parentElement.children[0];
@@ -24,7 +23,7 @@ function SearchResults({searchResults, trackList, setTrackList}) {
                         <div key={x}>
                             <div className="search-result">
                                 <div>
-                                    <Track id={song.id} name={song.name} artist={song.artists[0].name} album={song.album.name} />
+                                    <Track id={song.uri} name={song.name} artist={song.artists[0].name} album={song.album.name} />
                                 </div>
                                 <button onClick={handleClick}>Add</button>
                             </div>
