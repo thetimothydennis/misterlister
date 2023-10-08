@@ -34,7 +34,7 @@ import "./App.css";
 
 function App() {
 
-  const [playlistName, setPlaylistName] = useState("");
+  const [playlistName, setPlaylistName] = useState("New Playlist");
   const [trackList, setTrackList] = useState([]);
   const [accessToken, setAccessToken] = useState("");
   const [tokenType, setTokenType] = useState("");
