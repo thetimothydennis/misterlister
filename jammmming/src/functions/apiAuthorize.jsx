@@ -8,7 +8,7 @@ const state = generateRandomString(16);
 let stateKey = "spotify_auth_state";
 
 localStorage.setItem(stateKey, state);
-const scope = "user-read-private user-read-email";
+const scope = "user-read-private user-read-email playlist-modify-public playlist-modify private";
 
 let url = "https://accounts.spotify.com/authorize";
 url += "?response_type=token";

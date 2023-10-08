@@ -1,10 +1,11 @@
 import {useEffect} from "react";
 import TrackList from "../TrackList/TrackList";
 import "./Playlist.css";
-import PlaylistNameBox from "../PlaylistName";
+import PlaylistNameBox from "./PlaylistName";
+import getUsername from "../../functions/apiCreatePlaylist";
 
 function Playlist(props) {
-    const {setPlaylistName, playlistName, setTrackList, trackList} = props;
+    const {handleSavePlaylist, setPlaylistName, playlistName, setTrackList, trackList} = props;
 
     useEffect(() => {
         let playlistHeader = document.getElementById("playlist-header");
@@ -29,11 +30,13 @@ function Playlist(props) {
         setPlaylistName(e.target.value)
     }
 
+
+
     return (
         <div id="playlist">
             <h2 onClick={togglePlaylistHeader} id="playlist-header">{playlistName}</h2>
             <PlaylistNameBox playlistName={playlistName} togglePlaylistHeader={togglePlaylistHeader} handleChangeName={handleChangeName} />
-            <button>Add to Spotify</button>
+            <button onClick={handleSavePlaylist}>Add to Spotify</button>
             <TrackList setTrackList={setTrackList} trackList={trackList} />
         </div>
     )
