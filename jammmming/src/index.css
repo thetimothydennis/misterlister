@@ -21,14 +21,15 @@ button, input[type="submit"] {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: hsl(140, 30%, 5%);
+  background-color: hsl(140, 30%, 25%);
   cursor: pointer;
   transition: border-color 0.25s;
   margin: auto 1rem;
-  color: rgba(255, 255, 255, 0.87);
+  color: hsl(150, 90%, 70%);
 }
 button:hover, input[type="submit"]:hover {
-  border: 2px solid hsl(150, 90%, 90%);
+  border: 2px solid hsl(150, 90%, 70%);
+  background-color: hsl(140, 50%, 30%);
 }
 
 button:focus,
