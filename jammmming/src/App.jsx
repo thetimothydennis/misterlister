@@ -85,7 +85,7 @@ function App() {
       <div id="main-container">
         <div id="left-container">
           <SearchBox {...{handleSearch, searchString, setSearchString}} />
-          <SearchResults {...{searchResults, trackList, setTrackList}} />
+          <SearchResults {...{trackUris, searchResults, trackList, setTrackList}} />
         </div>
         <div id="right-container">
           <Playlist {...{handleSavePlaylist, trackList, setTrackList, playlistName, setPlaylistName}} />
