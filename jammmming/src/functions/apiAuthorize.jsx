@@ -1,7 +1,7 @@
 import generateRandomString from "./genRandomStr";
 
 const API_CLIENT_ID = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-const REDIRECT_URI = "http://localhost:5173/callback";
+const REDIRECT_URI = import.meta.env.VITE_SPOTIFY_CALLBACK;
 
 const state = generateRandomString(16);
 
