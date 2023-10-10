@@ -2,11 +2,12 @@ import PropTypes from "prop-types";``
 import Track from "../Track/Track.jsx";
 import "./TrackList.css";
 
-function TrackList({trackList, setTrackList}) {
+function TrackList({searchResults, setSearchResults, trackList, setTrackList}) {
 
     const handleClick = (e) => {
-        const removeId = e.target.parentElement.children[0].children[0].id;
-        const newTrackList = trackList.filter(item => item.id !== removeId)
+        const remove = e.target.parentElement.children[0].children[0];
+        const removeId = remove.id;
+        const newTrackList = trackList.filter(item => item.id !== removeId);
         setTrackList(newTrackList)
     }
 
@@ -28,7 +29,9 @@ function TrackList({trackList, setTrackList}) {
 
 TrackList.propTypes = {
     trackList: PropTypes.array,
-    setTrackList: PropTypes.func
+    setTrackList: PropTypes.func,
+    searchResults: PropTypes.array,
+    setSearchResults: PropTypes.func
 }
 
 export default TrackList;

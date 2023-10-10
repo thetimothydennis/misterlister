@@ -3,7 +3,7 @@ import PropTypes from "prop-types";``
 import Track from "../Track/Track";
 import "./SearchResults.css";
 
-function SearchResults({trackUris, searchResults, trackList, setTrackList}) {
+function SearchResults({setSearchResults, searchResults, trackList, setTrackList}) {
 
     const [render, setRender] = useState(<div></div>);
 
@@ -20,7 +20,9 @@ function SearchResults({trackUris, searchResults, trackList, setTrackList}) {
                     alert("Track already exists in playlist.")
                 } else {
                     const newTrackList = [...trackList, {name: trackName, artist: trackArtist, album: trackAlbum, id: trackId}]
-                    setTrackList(() => newTrackList)
+                    setTrackList(() => newTrackList);      
+                    const newSearchResults = searchResults.filter(track => track.uri !== trackId);
+                    setSearchResults(() => newSearchResults)           
                 }
             }
             setRender(
@@ -54,7 +56,7 @@ SearchResults.propTypes = {
     searchResults: PropTypes.array,
     trackList: PropTypes.array,
     setTrackList: PropTypes.func,
-    trackUris: PropTypes.array
+    setSearchResults: PropTypes.func
 }
 
 export default SearchResults;

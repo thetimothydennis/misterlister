@@ -10,7 +10,9 @@ function Playlist(props) {
         setPlaylistName, 
         playlistName, 
         setTrackList,
-        trackList
+        trackList,
+        searchResults,
+        setSearchResults
     } = props;
 
     useEffect(() => {
@@ -41,7 +43,7 @@ function Playlist(props) {
             <h2 onClick={togglePlaylistHeader} id="playlist-header">{playlistName}</h2>
             <PlaylistNameBox {...{playlistName, togglePlaylistHeader, handleChangeName}} />
             <button className="save-playlist-btn" onClick={handleSavePlaylist}>Add to Spotify</button>
-            <TrackList {...{setTrackList, trackList}} />
+            <TrackList {...{searchResults, setSearchResults, setTrackList, trackList}} />
         </div>
     )
 }
@@ -51,7 +53,9 @@ Playlist.propTypes = {
     setPlaylistName: PropTypes.func,
     playlistName: PropTypes.string,
     setTrackList: PropTypes.func,
-    trackList: PropTypes.array
+    trackList: PropTypes.array,
+    searchResults: PropTypes.array,
+    setSearchResults: PropTypes.func
 }
 
 export default Playlist;

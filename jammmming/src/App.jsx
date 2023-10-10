@@ -85,10 +85,10 @@ function App() {
       <div id="main-container">
         <div id="left-container">
           <SearchBox {...{handleSearch, searchString, setSearchString}} />
-          <SearchResults {...{trackUris, searchResults, trackList, setTrackList}} />
+          <SearchResults {...{setSearchResults, searchResults, trackList, setTrackList}} />
         </div>
         <div id="right-container">
-          <Playlist {...{handleSavePlaylist, trackList, setTrackList, playlistName, setPlaylistName}} />
+          <Playlist {...{searchResults, setSearchResults, handleSavePlaylist, trackList, setTrackList, playlistName, setPlaylistName}} />
         </div>
       </div>
     </div>
