@@ -21,18 +21,17 @@ div#header{
 #header h1 {
   margin: 0;
 }
-
 div#root-container {
   display: flex;
   flex-direction: column;
   justify-items: center;
-  align-items: center;
+  align-items: center
 }
 
 div#main-container {
   display: flex;
   flex-direction: row;
-  width: 90vw;
+  width: 90vw
 }
 
 div#left-container {
@@ -45,6 +44,10 @@ div#left-container {
 }
 
 div#right-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
   margin: 1rem 2rem;
   width: 40vw
 }
@@ -90,3 +93,32 @@ div#playlist {
   border-radius: 1rem;
 }
 
+@media only screen and (max-width: 770px) {
+    
+  div#root-container {
+    width: 75vw;
+  }
+
+  div#main-container {
+      flex-direction: column;
+      width: 100%;
+      margin: 1rem auto;
+  }
+
+  div#left-container {
+      width: 100%;
+      margin: 0 auto;
+  }
+
+  div#right-container {
+      width: 100%;
+      margin: 0 auto;
+  }
+
+}
+
+@media only screen and (max-width: 376px) {
+  div#header{
+    height: auto;
+  }
+}
